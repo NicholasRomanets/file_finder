@@ -1,10 +1,72 @@
-## My little python project.
 
-Search for files(*txt, *dcox, *xlsx, *pdf, *json, *csv) by content(keyword) in the selected directory.    
-The program was developed for Windows 10 x64.    
-For GUI I used PyQt5.   
-*2022/07/27 (Y/M/D)*:   
-Excel file parsing not working.    
-*In future:*   
-Remake the program multi-threaded.  
-![enter image description here](https://sun9-3.userapi.com/impg/SXDkJqKiEbXh1PnLVKGXuR8ePlCaKQdxh1TFXA/8iHOpcGoqz0.jpg?size=1280x725&quality=96&sign=e75cb780353192ff0bc712b746cca19d&type=album)
+# File Finder
+
+Програма для пошуку файлів за назвою у вибраній директорії.
+
+> **Статус:** програма в активній розробці. 
+> Наразі працює лише пошук файлів **за назвою** і **без рекурсії**.
+
+## Можливості
+
+- Пошук файлів за назвою;
+- Підтримувані формати: `.txt`, `.doc(x)`, `.xls(x)`, `.pdf`, `.json`, `.csv` та інші текстові типи;
+- Графічний інтерфейс на **PyQt6**
+
+## Підтримувані операційні системи
+
+- Linux (основна платформа)
+- **macOS** (має працювати, але не тестувалося офіційно)
+- Windows 10/11 (має працювати, але не тестувалося офіційно)
+
+## Встановлення
+
+### 1. Клонування репозиторію
+
+```bash
+git clone https://github.com/NicholasRomanets/file_finder.git
+cd file_finder
+```
+
+### 2. Створення віртуального середовища
+
+```bash
+python3 -m venv venv
+source venv/bin/activate          # macOS / Linux
+venv\Scripts\activate             # Windows
+```
+
+### 3. Встановлення залежностей
+
+```bash
+pip install -r requirements.txt
+```
+
+Якщо файлу **requirements.txt** ще немає, основні залежності:
+PyQt6
+
+## Плани на майбутнє:
+
+- [ ] Підтримка рекурсії;
+- [ ] Багатопотоковий пошук (щоб прискорити роботу з великими директоріями);
+- [ ] Парсинг Excel/Word-файлів;
+- [ ] Підтримка додаткових форматів (.odt, .rtf, .epub тощо);
+- [ ] Темна тема інтерфейсу;
+- [ ] Збереження налаштувань між запусками;
+- [ ] Можливість пошуку за регулярними виразами (regex);
+- [ ] Пошук по змісту;
+- [ ] Можливість виключити файл з результатів, якщо в ньому міститься певний текст;
+- [ ] Збереження результатів у окремі файли:
+	- [ ] найдені файли;
+	- [ ] виключені файли;
+	- [ ] усі перевірені файли;
+- [ ] Опціональне надсилання звіту на електронну пошту.
+
+## Ліцензія
+
+MIT
+
+---
+
+**Автор:** Nicholas Romanets
+**Оригінальний проєкт:** 2022
+**Оновлено:** 2026 (перехід на PyQt6)

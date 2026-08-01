@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PyQt6 import QtWidgets #from PyQt5 import QtWidgets
 import design
 import sys
 import os
@@ -7,7 +7,6 @@ import json
 import PyPDF2
 import docx
 import openpyxl
-from threading import Thread
 
 
 class MainWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):
@@ -129,11 +128,11 @@ class MainWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):
 
     def read_docx(self, file_full_name):
         doc = docx.Document(file_full_name)
+
+    def read_json(self, file_full_name):
         for paragraph in doc.paragraphs:
             if self.keyword.lower() in paragraph.text.lower():
                 return self.result.append(file_full_name)
-
-    def read_json(self, file_full_name):
         with open(file_full_name) as file:
             file_reader = json.load(file)
             for keys, values in file_reader.items():
@@ -154,7 +153,7 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
     window = MainWindow()
     window.show()
-    app.exec_()
+    app.exec()
 
 
 if __name__ == '__main__':
